@@ -23,7 +23,7 @@ import java.util.Scanner;
 
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
- * @date 30/08/2024
+ * @date 02/09/2024
  * @brief Class Program
  */
 
