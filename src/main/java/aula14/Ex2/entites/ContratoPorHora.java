@@ -17,30 +17,29 @@
 
 package aula14.Ex2.entites;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
- *
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 27/09/2024
  * @brief Class ContratoPorHora
  */
 public class ContratoPorHora {
-    private Date data;
+    private LocalDate data;
     private double valorPorHora;
     private int horas;
 
-    public ContratoPorHora(Date data, double valorPorHora, int horas) {
+    public ContratoPorHora(LocalDate data, double valorPorHora, int horas) {
         this.data = data;
         this.valorPorHora = valorPorHora;
         this.horas = horas;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
@@ -60,7 +59,7 @@ public class ContratoPorHora {
         this.horas = horas;
     }
 
-    public double valorTotal(){
-        return valorPorHora*horas;
+    public double valorTotal() {
+        return valorPorHora * horas;
     }
 }
