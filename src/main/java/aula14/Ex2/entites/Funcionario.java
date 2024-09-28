@@ -17,11 +17,11 @@
 
 package aula14.Ex2.entites;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
- *
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 27/09/2024
  * @brief Class Funcionario
@@ -40,7 +40,7 @@ public class Funcionario {
         this.departamento = departamento;
     }
 
-    public void adicionarContrato(ContratoPorHora contrato){
+    public void adicionarContrato(ContratoPorHora contrato) {
         contratos.add(contrato);
     }
 
@@ -50,15 +50,14 @@ public class Funcionario {
 
     public double calcularSalario(int ano, int mes) {
         double soma = salarioBase;
-        Calendar cal = Calendar.getInstance();
 
         for (ContratoPorHora c : contratos) {
-            cal.setTime(c.getData());
-            int calendarioAno = cal.get(Calendar.YEAR);
-            int calendarioMes = cal.get(Calendar.MONTH)+1;
+            LocalDate dataContrato = c.getData();
+            int contratoAno = dataContrato.getYear();
+            int contratoMes = dataContrato.getMonthValue();
 
-            if (ano==calendarioAno && mes==calendarioMes){
-                soma+=c.valorTotal();
+            if (ano == contratoAno && mes == contratoMes) {
+                soma += c.valorTotal();
             }
         }
         return soma;
