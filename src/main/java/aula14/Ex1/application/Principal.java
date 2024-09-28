@@ -38,7 +38,7 @@ public class Principal {
         LocalDateTime d2 = LocalDateTime.now(); //data e hora no fuso local (brasileiro, nesse caso)
         System.out.println("d2 = " + d2);
 
-        Instant d3 = Instant.now(); //data e hora no fuso de greenwhich
+        Instant d3 = Instant.now(); //data e hora no fuso de greenwich
         System.out.println("d3 = " + d3);
 
         LocalDate d4 = LocalDate.parse("2024-09-27");
