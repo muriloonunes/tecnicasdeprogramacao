@@ -18,20 +18,19 @@
 package aula14.Ex2.entites;
 
 /**
- *
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 27/09/2024
  * @brief Enum NivelTrabalhador
  */
 public enum NivelTrabalhador {
     JUNIOR(1),
-    PLENO (2),
+    PLENO(2),
     SENIOR(3);
 
     private int index;
 
     NivelTrabalhador(int i) {
-        this.index=i;
+        this.index = i;
     }
 
     public int getIndex() {
