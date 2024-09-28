@@ -52,7 +52,7 @@ public class Post {
                 + likes + " Likes - "
                 + momento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")) + "\n"
                 + conteudo + "\n"
-                + "Comments: \n");
+                + "Comentários: \n");
 
         for (Comentario comentario : comentarios) {
             resultado.append(comentario.getComentario()).append("\n");
