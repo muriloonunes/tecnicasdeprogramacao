@@ -24,7 +24,26 @@ package aula14.Ex2.entites;
  * @brief Enum NivelTrabalhador
  */
 public enum NivelTrabalhador {
-    JUNIOR,
-    PLENO,
-    SENIOR;
+    JUNIOR(1),
+    PLENO (2),
+    SENIOR(3);
+
+    private int index;
+
+    NivelTrabalhador(int i) {
+        this.index=i;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public static NivelTrabalhador fromIndex(int index) {
+        for (NivelTrabalhador nivel : NivelTrabalhador.values()) {
+            if (nivel.getIndex() == index) {
+                return nivel;
+            }
+        }
+        throw new IllegalArgumentException("Nível inválido: " + index);
+    }
 }
