@@ -30,19 +30,14 @@ public class Programa {
         Post post1 = new Post("2024-09-27T19:23:30","Viajando para a Nova Zelandia",
                 "Estou indo visitar esse lindo pais!", 12);
 
-        Comentario c1 = new Comentario("Faça uma boa viagem!");
-        Comentario c2 = new Comentario("Nossa que incrivel");
-
-        post1.adicionarComentario(c1);
-        post1.adicionarComentario(c2);
+        post1.adicionarComentario(new Comentario("Faça uma boa viagem!"));
+        post1.adicionarComentario(new Comentario("Nossa que incrivel"));
 
         Post post2 = new Post("2024-09-28T16:15:58","Boa noite gnt",
                 "Vejo vcs amanha", 5);
 
-        Comentario c3 = new Comentario("Boa noite");
-        Comentario c4 = new Comentario("Que a Força esteja com voce");
-        post2.adicionarComentario(c3);
-        post2.adicionarComentario(c4);
+        post2.adicionarComentario(new Comentario("Boa noite"));
+        post2.adicionarComentario(new Comentario("Que a Força esteja com voce"));
 
         System.out.println(post1);
         System.out.println(post2);
