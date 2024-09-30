@@ -19,7 +19,6 @@ package aula14.Ex2.entites;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>

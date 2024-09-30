@@ -39,21 +39,20 @@ public class Programa {
         ArrayList<ContratoPorHora> contratoPorHora = new ArrayList<>();
 
         System.out.print("Digite o nome do departamento: ");
-        Departamento departamento = new Departamento(ler.next());
-        ler.nextLine();
+        Departamento departamento = new Departamento(ler.nextLine());
 
         System.out.println("Digite os dados do funcionário: ");
         System.out.print("Nome: ");
         String nome = ler.nextLine();
         System.out.print("Nível (1 - JUNIOR, 2 - PLENO, 3 - SENIOR): ");
-        int nivelInt = ler.nextInt();
-        NivelTrabalhador nivel = NivelTrabalhador.fromIndex(nivelInt);
+        NivelTrabalhador nivel = NivelTrabalhador.fromIndex(ler.nextInt());
         System.out.print("Salário base: ");
         double salarioBase = ler.nextDouble();
-        System.out.print("Quantos contratos ele tem? ");
-        int numeroContratos = ler.nextInt();
 
         Funcionario funcionario = new Funcionario(salarioBase,nome,nivel,departamento);
+
+        System.out.print("Quantos contratos ele tem? ");
+        int numeroContratos = ler.nextInt();
 
         for (int i = 1; i <= numeroContratos; i++) {
             System.out.println("Digite os dados do contrato #"+i+": ");
