@@ -15,7 +15,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 package aula14.Ex2.application;
 
 import aula14.Ex2.entites.ContratoPorHora;
@@ -40,9 +39,8 @@ public class Programa {
         ArrayList<ContratoPorHora> contratoPorHora = new ArrayList<>();
 
         System.out.print("Digite o nome do departamento: ");
-        String departamentoString = ler.next();
+        Departamento departamento = new Departamento(ler.next());
         ler.nextLine();
-        Departamento departamento = new Departamento(departamentoString);
 
         System.out.println("Digite os dados do funcionário: ");
         System.out.print("Nome: ");
@@ -60,8 +58,7 @@ public class Programa {
         for (int i = 1; i <= numeroContratos; i++) {
             System.out.println("Digite os dados do contrato #"+i+": ");
             System.out.print("Data (dd/MM/yyyy): ");
-            String dataInput = ler.next();
-            LocalDate data = LocalDate.parse(dataInput, fmt1);
+            LocalDate data = LocalDate.parse(ler.next(), fmt1);
             System.out.print("Valor por hora: ");
             double valorHora = ler.nextDouble();
             System.out.print("Duração em horas: ");

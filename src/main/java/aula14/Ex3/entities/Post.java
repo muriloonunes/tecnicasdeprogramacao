@@ -44,8 +44,6 @@ public class Post {
         comentarios.add(comentario);
     }
 
-
-
     @Override
     public String toString() {
         StringBuilder resultado = new StringBuilder(titulo + "\n"
