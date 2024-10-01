@@ -44,6 +44,6 @@ public enum OrderStatus {
                 return status;
             }
         }
-        throw new IllegalArgumentException("Nível inválido: " + index);
+        throw new IllegalArgumentException();
     }
 }

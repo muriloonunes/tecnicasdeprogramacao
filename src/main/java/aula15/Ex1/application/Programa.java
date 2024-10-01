@@ -21,7 +21,9 @@ import aula15.Ex1.entities.*;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -42,33 +44,78 @@ public class Programa {
         System.out.print("Email: ");
         String email = ler.nextLine();
         System.out.print("Data de nascimento (dd/MM/yyyy): ");
-        String dataNascimentoStr = ler.nextLine().trim();
-        LocalDate dataNascimento = LocalDate.parse(dataNascimentoStr, fmt1);
+        LocalDate dataNascimento = null;
+        while (dataNascimento == null) {
+            try {
+                dataNascimento = LocalDate.parse(ler.nextLine(), fmt1);
+            } catch (DateTimeParseException e) {
+                System.out.println("Data inválida! Tente novamente");
+            }
+        }
         Cliente cliente = new Cliente(nomeCliente, email, dataNascimento);
 
         System.out.println("Digite os dados do pedido: ");
         System.out.print("Status (1 - Pendente, 2 - Processando, 3 - Enviado, 4 - Entregue): ");
-        OrderStatus status = OrderStatus.fromIndex(ler.nextInt());
-        ler.nextLine();
-
+        OrderStatus status = null;
+        while (status == null) {
+            try {
+                status = OrderStatus.fromIndex(ler.nextInt());
+            } catch (IllegalArgumentException e) {
+                System.out.println("Nível inválido! Tente novamente");
+                ler.nextLine();
+            }
+        }
         Pedido pedido = new Pedido(status, cliente);
 
         System.out.println("Quantos itens tem o pedido? ");
-        int itens = ler.nextInt();
-        ler.nextLine();
+        int itens = 0;
+        while (itens <= 0) {
+            try {
+                itens = ler.nextInt();
+                if (itens < 0) {
+                    throw new IllegalArgumentException();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Quantidade inválida! Tente novamente");
+                ler.nextLine();
+            } catch (IllegalArgumentException e) {
+                System.out.println("Quantidade de itens não pode ser negativa.");
+                ler.nextLine();
+            }
+        }
         for (int i = 1; i <= itens; i++) {
             System.out.println("Digite os dados do item #" + i + ": ");
             System.out.print("Nome do item: ");
             String nomeItem = ler.nextLine();
             System.out.print("Preço: ");
-            double preco = ler.nextDouble();
-            ler.nextLine();
+            double preco = 0;
+            while (preco <= 0) {
+                try {
+                    preco = ler.nextDouble();
+                    if (preco < 0) {
+                        throw new IllegalArgumentException();
+                    }
+                } catch (InputMismatchException | IllegalArgumentException e) {
+                    System.out.println("Preço inválido! Tente novamente");
+                    ler.nextLine();
+                }
+            }
 
             produtos.add(new Produto(nomeItem, preco));
 
             System.out.print("Quantidade: ");
-            int quantidade = ler.nextInt();
-            ler.nextLine();
+            int quantidade = 0;
+            while (quantidade <= 0) {
+                try {
+                    quantidade = ler.nextInt();
+                    if (quantidade < 0) {
+                        throw new IllegalArgumentException();
+                    }
+                } catch (InputMismatchException | IllegalArgumentException e) {
+                    System.out.println("Quantidade inválida! Tente novamente");
+                    ler.nextLine();
+                }
+            }
 
             item.add(new ItemPedido(quantidade, produtos.get(i - 1)));
 
