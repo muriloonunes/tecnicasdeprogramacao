@@ -24,9 +24,28 @@ package aula15.Ex1.entities;
  */
 public class ItemPedido {
     private int quantidade;
-    private double price;
+    private double preco;
+    private Produto produto;
+
+    public ItemPedido(int quantidade, Produto produto) {
+        this.quantidade = quantidade;
+        this.preco = produto.getPreco();
+        this.produto = produto;
+    }
 
     public double calcularTotal() {
-        return price * quantidade;
+        return preco * quantidade;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
     }
 }

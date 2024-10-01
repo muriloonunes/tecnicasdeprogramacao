@@ -18,6 +18,8 @@
 package aula15.Ex1.entities;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 /**
@@ -26,16 +28,27 @@ import java.util.ArrayList;
  * @brief Class Pedido.
  */
 public class Pedido {
-    private LocalDate momento;
+    private LocalDateTime momento;
     private OrderStatus status;
     private ArrayList<ItemPedido> itens = new ArrayList<>();
+    private Cliente cliente;
 
-    public LocalDate getMomento() {
+    public Pedido(OrderStatus status, Cliente cliente) {
+        this.status = status;
+        this.cliente = cliente;
+        this.momento = LocalDateTime.now();
+    }
+
+    public LocalDateTime getMomento() {
         return momento;
     }
 
     public OrderStatus getStatus() {
         return status;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
     }
 
     public void adicionarItem(ItemPedido item) {
@@ -52,5 +65,25 @@ public class Pedido {
             total += i.calcularTotal();
         }
         return total;
+    }
+
+    public void resumoPedido() {
+        StringBuilder resumo = new StringBuilder("Resumo do pedido: \n" +
+                "Momento do pedido: " + this.momento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")) + "\n"
+                + "Status do pedido: " + this.status + "\n"
+                + "Cliente: " + this.cliente.getNome() + " ("
+                + this.cliente.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + ") - "
+                + this.cliente.getEmail() + "\n"
+                + "Itens do pedido: \n");
+
+        for (ItemPedido item : itens) {
+            resumo.append("Item: ").append(item.getProduto().getNome())
+                    .append(", Preço: ").append(item.getProduto().getPreco())
+                    .append(", Quantidade: ").append(item.getQuantidade())
+                    .append(", Subtotal: $").append(item.calcularTotal()).append("\n");
+        }
+
+        resumo.append("Total: $").append(calcularTotal());
+        System.out.println(resumo);
     }
 }

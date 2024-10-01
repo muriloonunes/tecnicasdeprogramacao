@@ -29,6 +29,12 @@ public class Cliente {
     private String email;
     private LocalDate dataNascimento;
 
+    public Cliente(String nome, String email, LocalDate dataNascimento) {
+        this.nome = nome;
+        this.email = email;
+        this.dataNascimento = dataNascimento;
+    }
+
     public String getNome() {
         return nome;
     }
