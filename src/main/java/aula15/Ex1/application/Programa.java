@@ -63,6 +63,9 @@ public class Programa {
             } catch (IllegalArgumentException e) {
                 System.out.println("Nível inválido! Tente novamente");
                 ler.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.println("Digite apenas números");
+                ler.nextLine();
             }
         }
         Pedido pedido = new Pedido(status, cliente);
@@ -76,13 +79,14 @@ public class Programa {
                     throw new IllegalArgumentException();
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Quantidade inválida! Tente novamente");
+                System.out.println("A quantidade deve ser um número inteiro");
                 ler.nextLine();
             } catch (IllegalArgumentException e) {
-                System.out.println("Quantidade de itens não pode ser negativa.");
+                System.out.println("A quantidade de itens não pode ser negativa");
                 ler.nextLine();
             }
         }
+        ler.nextLine();
         for (int i = 1; i <= itens; i++) {
             System.out.println("Digite os dados do item #" + i + ": ");
             System.out.print("Nome do item: ");
@@ -111,8 +115,11 @@ public class Programa {
                     if (quantidade < 0) {
                         throw new IllegalArgumentException();
                     }
-                } catch (InputMismatchException | IllegalArgumentException e) {
-                    System.out.println("Quantidade inválida! Tente novamente");
+                } catch (InputMismatchException e) {
+                    System.out.println("A quantidade deve ser um número inteiro");
+                    ler.nextLine();
+                } catch (IllegalArgumentException e) {
+                    System.out.println("A quantidade do item não pode ser negativa.");
                     ler.nextLine();
                 }
             }
@@ -120,7 +127,10 @@ public class Programa {
             item.add(new ItemPedido(quantidade, produtos.get(i - 1)));
 
             pedido.adicionarItem(item.get(i - 1));
+            ler.nextLine();
         }
+
+        System.out.println();
         pedido.resumoPedido();
     }
 }

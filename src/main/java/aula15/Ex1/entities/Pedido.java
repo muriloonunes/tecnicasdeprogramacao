@@ -78,12 +78,12 @@ public class Pedido {
 
         for (ItemPedido item : itens) {
             resumo.append("Item: ").append(item.getProduto().getNome())
-                    .append(", Preço: ").append(item.getProduto().getPreco())
+                    .append(", Preço: $").append(String.format("%.2f", item.getProduto().getPreco()))
                     .append(", Quantidade: ").append(item.getQuantidade())
-                    .append(", Subtotal: $").append(item.calcularTotal()).append("\n");
+                    .append(", Subtotal: $").append(String.format("%.2f", item.calcularTotal())).append("\n");
         }
 
-        resumo.append("Total: $").append(calcularTotal());
+        resumo.append("Total: $").append(String.format("%.2f", calcularTotal()));
         System.out.println(resumo);
     }
 }
