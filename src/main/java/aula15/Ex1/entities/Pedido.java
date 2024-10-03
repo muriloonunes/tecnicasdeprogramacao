@@ -17,7 +17,6 @@
 
 package aula15.Ex1.entities;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -25,7 +24,7 @@ import java.util.ArrayList;
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 30/09/2024
- * @brief Class Pedido.
+ * @brief Class Pedido
  */
 public class Pedido {
     private LocalDateTime momento;
@@ -67,7 +66,7 @@ public class Pedido {
         return total;
     }
 
-    public void resumoPedido() {
+    public void resumirPedido() {
         StringBuilder resumo = new StringBuilder("Resumo do pedido: \n" +
                 "Momento do pedido: " + this.momento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")) + "\n"
                 + "Status do pedido: " + this.status + "\n"
