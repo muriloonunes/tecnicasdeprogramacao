@@ -20,7 +20,7 @@ package aula15.Ex1.entities;
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 30/09/2024
- * @brief Enum OrderStatus.
+ * @brief Enum OrderStatus
  */
 public enum OrderStatus {
     PAGAMENTO_PENDENTE(1),

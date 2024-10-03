@@ -24,7 +24,7 @@ import java.util.ArrayList;
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 28/09/2024
- * @brief Class Post.
+ * @brief Class Post
  */
 public class Post {
     private LocalDateTime momento;

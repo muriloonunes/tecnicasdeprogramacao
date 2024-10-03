@@ -23,7 +23,7 @@ import java.util.Scanner;
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 30/09/2024
- * @brief Class StackTrace.
+ * @brief Class StackTrace
  */
 public class StackTrace {
     public static void main(String[] args) {

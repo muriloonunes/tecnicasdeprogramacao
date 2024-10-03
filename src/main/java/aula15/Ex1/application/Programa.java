@@ -29,7 +29,7 @@ import java.util.Scanner;
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 01/10/2024
- * @brief Class Programa.
+ * @brief Class Programa
  */
 public class Programa {
     public static void main(String[] args) {
@@ -131,6 +131,6 @@ public class Programa {
         }
 
         System.out.println();
-        pedido.resumoPedido();
+        pedido.resumirPedido();
     }
 }

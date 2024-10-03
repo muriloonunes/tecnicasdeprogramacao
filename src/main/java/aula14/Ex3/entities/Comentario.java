@@ -20,7 +20,7 @@ package aula14.Ex3.entities;
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 28/09/2024
- * @brief Class Comentario.
+ * @brief Class Comentario
  */
 public class Comentario {
     private String comentario;

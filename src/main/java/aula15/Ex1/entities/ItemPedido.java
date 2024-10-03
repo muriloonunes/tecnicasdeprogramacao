@@ -20,7 +20,7 @@ package aula15.Ex1.entities;
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 30/09/2024
- * @brief Class ItemPedido.
+ * @brief Class ItemPedido
  */
 public class ItemPedido {
     private int quantidade;

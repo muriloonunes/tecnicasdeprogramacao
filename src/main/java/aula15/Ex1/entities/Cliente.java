@@ -22,7 +22,7 @@ import java.time.LocalDate;
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 30/09/2024
- * @brief Class Cliente.
+ * @brief Class Cliente
  */
 public class Cliente {
     private String nome;

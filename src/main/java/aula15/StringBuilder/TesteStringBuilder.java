@@ -20,7 +20,7 @@ package aula15.StringBuilder;
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 30/09/2024
- * @brief Class TesteStringBuilder.
+ * @brief Class TesteStringBuilder
  */
 public class TesteStringBuilder {
     public static void main(String[] args) {

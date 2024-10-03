@@ -23,7 +23,7 @@ import aula14.Ex3.entities.Post;
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 28/09/2024
- * @brief Class Programa.
+ * @brief Class Programa
  */
 public class Programa {
     public static void main(String[] args) {

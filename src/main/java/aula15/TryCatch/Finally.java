@@ -24,7 +24,7 @@ import java.util.Scanner;
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
  * @date 30/09/2024
- * @brief Class Finally.
+ * @brief Class Finally
  */
 public class Finally {
     public static void main(String[] args) {
