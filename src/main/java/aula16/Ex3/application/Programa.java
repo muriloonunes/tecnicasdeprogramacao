@@ -20,7 +20,6 @@ package aula16.Ex3.application;
 import aula16.Ex3.models.entities.Reserva;
 import aula16.Ex3.models.exceptions.DomainException;
 
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -58,10 +57,13 @@ public class Programa {
             reserva.atualizarDatas(checkIn, checkOut);
             System.out.println("Reserva: " + reserva);
         } catch (DateTimeParseException e) {
-            System.out.println("Formato de data inválida");
+            //erro ao digitar a data (por exemplo, em um formato inválido)
+            System.out.println("Formato de data inválido");
         } catch (DomainException e) {
+            //erro personalizado, caso haja algum problema com as datas
             System.out.println("Erro na reserva: " + e.getMessage());
         } catch (RuntimeException e) {
+            //qualquer outro tipo de erro
             System.out.println("Erro inesperado");
         }
     }

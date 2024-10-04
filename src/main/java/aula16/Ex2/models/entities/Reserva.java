@@ -57,19 +57,19 @@ public class Reserva {
     }
 
     public String atualizarDatas(LocalDate checkIn, LocalDate checkOut) {
-        LocalDate agora = LocalDate.now(); //cria uma variavel com a data de hoje
+        LocalDate agora = LocalDate.now(); //cria uma variavel com a data de hoje para comparação
 
-        //verica se as datas de check-in e check-out são antes da data de hoje
+        //retorna uma string se as datas de check-in e/ou check-out forem antes da data de hoje
         if (checkIn.isBefore(agora) || checkOut.isBefore(agora)) {
             return "Erro na reserva: as novas datas devem ser futuras";
         }
-        //verifica se a data do check-out é antes da data de hoje
+        //retorna uma string se a data do check-out for antes da data de hoje
         else if (!checkOut.isAfter(checkIn)) {
             return "Erro na reserva: a data do check-out deve ser posterior a data do check-in";
         } else {
             this.checkIn = checkIn;
             this.checkOut = checkOut;
-            return null;
+            return null;    //se retornar nulo é porque nao houve erro
         }
     }
 

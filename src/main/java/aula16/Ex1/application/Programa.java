@@ -54,9 +54,9 @@ public class Programa {
             System.out.print("Data do check-out (dd/MM/yyyy):");
             checkOut = LocalDate.parse(ler.next(), fmt1);
 
-            LocalDate agora = LocalDate.now(); //cria uma variavel com a data de hoje
+            LocalDate agora = LocalDate.now(); //cria uma variavel com a data de hoje para comparação
 
-            //verica se as datas de check-in e check-out são antes da data de hoje
+            //verica se as datas de check-in e/ou check-out são antes da data de hoje
             if (checkIn.isBefore(agora) || checkOut.isBefore(agora)) {
                 System.out.println("Erro na reserva: as novas datas devem ser futuras");
             }

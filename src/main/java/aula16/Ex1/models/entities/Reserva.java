@@ -56,6 +56,7 @@ public class Reserva {
         return ChronoUnit.DAYS.between(checkIn, checkOut);
     }
 
+    //atualiza as datas
     public void atualizarDatas(LocalDate checkIn, LocalDate checkOut) {
         this.checkIn = checkIn;
         this.checkOut = checkOut;

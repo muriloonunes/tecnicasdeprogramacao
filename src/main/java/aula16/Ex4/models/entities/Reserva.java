@@ -15,9 +15,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package aula16.Ex3.models.entities;
+package aula16.Ex4.models.entities;
 
-import aula16.Ex3.models.exceptions.DomainException;
+import aula16.Ex4.models.exceptions.DomainException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -67,11 +67,11 @@ public class Reserva {
 
         //lança uma exceção se as datas de check-in e/ou check-out forem antes da data de hoje
         if (checkIn.isBefore(agora) || checkOut.isBefore(agora)) {
-          throw new DomainException("As novas datas devem ser futuras");
+          throw new IllegalArgumentException("As novas datas devem ser futuras");
         }
         //lança uma exceção se a data do check-out for antes da data do check-in
         else if (!checkOut.isAfter(checkIn)) {
-            throw new DomainException("A data do check-out deve ser posterior a data do check-in");
+            throw new IllegalArgumentException("A data do check-out deve ser posterior a data do check-in");
         } else {
             this.checkIn = checkIn;
             this.checkOut = checkOut;

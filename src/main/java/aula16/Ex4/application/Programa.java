@@ -15,12 +15,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package aula16.Ex2.application;
+package aula16.Ex4.application;
 
-import aula16.Ex2.models.entities.Reserva;
+import aula16.Ex3.models.exceptions.DomainException;
+import aula16.Ex4.models.entities.Reserva;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 /**
@@ -33,19 +35,17 @@ public class Programa {
         Scanner ler = new Scanner(System.in);
         DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        System.out.print("Número do quarto: ");
-        int quarto = ler.nextInt();
-        System.out.print("Data do check-in (dd/MM/yyyy):");
-        LocalDate checkIn = LocalDate.parse(ler.next(), fmt1);
-        System.out.print("Data do check-out (dd/MM/yyyy):");
-        LocalDate checkOut = LocalDate.parse(ler.next(), fmt1);
+        try {
+            System.out.print("Número do quarto: ");
+            int quarto = ler.nextInt();
+            System.out.print("Data do check-in (dd/MM/yyyy):");
+            LocalDate checkIn = LocalDate.parse(ler.next(), fmt1);
+            System.out.print("Data do check-out (dd/MM/yyyy):");
+            LocalDate checkOut = LocalDate.parse(ler.next(), fmt1);
 
-        //verifica se a data do check-in é posterior a data do check-out
-        if (checkIn.isAfter(checkOut)) {
-            System.out.println("Erro na reserva: a data do check-in deve ser antes da data do check-out");
-        } else {
             Reserva reserva = new Reserva(quarto, checkIn, checkOut);
             System.out.println("Reserva: " + reserva);
+
             System.out.println();
 
             System.out.println("Digite informações para atualizar a reserva:");
@@ -54,17 +54,12 @@ public class Programa {
             System.out.print("Data do check-out (dd/MM/yyyy):");
             checkOut = LocalDate.parse(ler.next(), fmt1);
 
-            String erro = reserva.atualizarDatas(checkIn, checkOut);    //a string erro armazena o retorno do método atualizarDatas
-
-            if (erro != null) {
-                //se erro for diferente de nulo, imprime a string contendo o erro retornada pelo método
-                System.out.println(erro);
-            } else {
-                //se erro é nulo, significa que não houve erros
-                System.out.println("Reserva atualizada: " + reserva);
-            }
+            reserva.atualizarDatas(checkIn, checkOut);
+            System.out.println("Reserva: " + reserva);
+        } catch (DateTimeParseException e) {
+            System.out.println("Formato de data inválida");
+        } catch (DomainException | IllegalArgumentException e) {
+            System.out.println("Erro na reserva: " + e.getMessage());
         }
-        ler.close();
     }
 }
-
