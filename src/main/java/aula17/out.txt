@@ -1,0 +1,5 @@
+Técnicas de programação
+Fundamentos matématicos
+Processos de Engenharia de software
+Sistrmas Operacionais
+Circuitos digitais e microcontroladores

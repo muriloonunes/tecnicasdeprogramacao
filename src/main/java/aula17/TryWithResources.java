@@ -15,32 +15,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package aula15.TryCatch;
+package aula17;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
- * @date 30/09/2024
- * @brief Class Finally
+ * @date 07/10/2024
+ * @brief Class TryWithResources
  */
-public class Finally {
+public class TryWithResources {
     public static void main(String[] args) {
-        File file = new File("C:\\Users\\Aluno\\Documents\\NetBeansProjects\\tecnicasdeprogramacao\\src\\main\\java\\aula15\\TryCatch\\in.txt");
-        Scanner ler = null;
-        try {
-            ler = new Scanner(file);
-            while (ler.hasNextLine()) {
-                System.out.println(ler.nextLine());
+        String path = "C:\\Users\\Aluno\\Documents\\NetBeansProjects\\tecnicasdeprogramacao\\src\\main\\java\\aula15\\TryCatch\\in.txt";
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            String line = br.readLine();
+            while (line != null) {
+                System.out.println(line);
+                line = br.readLine();
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("nao tem arquivo");
-        } finally {
-            if (ler != null) {
-                ler.close();
-            }
+        } catch (IOException e) {
+            System.out.println("Erro: " + e.getMessage());
         }
     }
 }
