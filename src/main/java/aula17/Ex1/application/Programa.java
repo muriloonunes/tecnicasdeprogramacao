@@ -21,7 +21,6 @@ import aula17.Ex1.entities.Produto;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * @author Murilo Nunes <murilo_no@outlook.com>
