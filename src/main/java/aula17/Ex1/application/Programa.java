@@ -30,8 +30,8 @@ import java.util.ArrayList;
 public class Programa {
     public static void main(String[] args) {
 
-        File produtosFile = new File("C:\\Users\\Aluno\\Documents\\NetBeansProjects\\tecnicasdeprogramacao\\src\\main\\java\\aula17\\Ex1\\files\\input.csv");
-        File total = new File("C:\\Users\\Aluno\\Documents\\NetBeansProjects\\tecnicasdeprogramacao\\src\\main\\java\\aula17\\Ex1\\files\\out\\out.csv");
+        File produtosFile = new File("src/main/java/aula17/Ex1/files/input.csv");
+        File total = new File("src/main/java/aula17/Ex1/files/out/out.csv");
         ArrayList<Produto> produtos = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(produtosFile))) {

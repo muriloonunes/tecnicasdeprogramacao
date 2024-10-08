@@ -28,7 +28,7 @@ import java.io.IOException;
  */
 public class Arquivos {
     public static void main(String[] args) {
-        String path = "C:\\Users\\Aluno\\Documents\\NetBeansProjects\\tecnicasdeprogramacao\\src\\main\\java\\aula15\\TryCatch\\in.txt";
+        String path = "src/main/java/aula15/TryCatch/in.txt";
         FileReader fr = null;
         BufferedReader br = null;
         try {

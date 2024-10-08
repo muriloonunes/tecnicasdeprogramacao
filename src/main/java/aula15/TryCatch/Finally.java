@@ -28,7 +28,7 @@ import java.util.Scanner;
  */
 public class Finally {
     public static void main(String[] args) {
-        File file = new File("C:\\Users\\Aluno\\Documents\\NetBeansProjects\\tecnicasdeprogramacao\\src\\main\\java\\aula15\\TryCatch\\in.txt");
+        File file = new File("src/main/java/aula15/TryCatch/in.txt");
         Scanner ler = null;
         try {
             ler = new Scanner(file);

@@ -31,7 +31,7 @@ public class Arquivos2 {
         String[] materias = {"Técnicas de programação", "Fundamentos matématicos", "Processos de Engenharia de software",
                 "Sistrmas Operacionais", "Circuitos digitais e microcontroladores"};
 
-        String path = "C:\\Users\\Aluno\\Documents\\NetBeansProjects\\tecnicasdeprogramacao\\src\\main\\java\\aula17\\out.txt";
+        String path = "src/main/java/aula17/out.txt";
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
             for (String materia : materias) {

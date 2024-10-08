@@ -28,7 +28,7 @@ import java.io.IOException;
  */
 public class TryWithResources {
     public static void main(String[] args) {
-        String path = "C:\\Users\\Aluno\\Documents\\NetBeansProjects\\tecnicasdeprogramacao\\src\\main\\java\\aula15\\TryCatch\\in.txt";
+        String path = "src/main/java/aula15/TryCatch/in.txt";
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line = br.readLine();
             while (line != null) {
